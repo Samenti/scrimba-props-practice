@@ -2,12 +2,9 @@ import React from 'react';
 import Joke from './components/Joke.js';
 
 export default function App(props) {
-  const jokes = props.jokes;
-
-  let jokeTags = [];
-  for (const [index, value] of jokes.entries()) {
-    const {setup=null, punchline} = value;
-    jokeTags.push(
+  const jokeElements = props.jokes.map((joke, index) => {
+    const {setup=null, punchline} = joke;
+    return (
       <Joke 
         key = {index}
         num = {index}
@@ -15,11 +12,11 @@ export default function App(props) {
         punchline = {punchline}
       />
     );
-  }
+  });
 
   return (
     <div>
-      {jokeTags}
+      {jokeElements}
     </div>
   );
 };
