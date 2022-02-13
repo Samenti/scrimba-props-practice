@@ -13,7 +13,11 @@ export default function Joke(props) {
     <ul key={ids[0]} className="joke">
       {setup && <li key={ids[1]} className="setup">{setup}</li>}
       {isShown && <li key={ids[2]} className="punchline">{punchline}</li>}
-      <button onClick={toggle}>Show Punchline</button>
+      <button
+        onClick={toggle}
+      >
+        {isShown ? 'Hide' : 'Show'} Punchline
+      </button>
     </ul>
   );
 };
