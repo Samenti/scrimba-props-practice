@@ -3,7 +3,7 @@ import React from 'react';
 export default function Joke(props) {
   const {num, setup, punchline} = props;
   
-  const ids = [num * 100, num, num + 1];
+  const ids = [num + 1, num + 1, (num + 1) * Math.random()];
   let setupLine;
   if (setup == null) {
     setupLine = <></>;
