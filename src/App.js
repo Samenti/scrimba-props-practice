@@ -1,4 +1,5 @@
 import React from 'react';
+import Form from './components/Form.js';
 import Joke from './components/Joke.js';
 
 export default function App(props) {
@@ -7,7 +8,7 @@ export default function App(props) {
     return (
       <Joke 
         key = {index}
-        num = {index}
+        num= {index}
         setup = {setup}
         punchline = {punchline}
       />
@@ -15,8 +16,9 @@ export default function App(props) {
   });
 
   return (
-    <div>
-      {jokeElements}
+    <div className="container">
+        {jokeElements}
+        <Form />
     </div>
   );
 };
